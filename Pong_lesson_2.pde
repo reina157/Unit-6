@@ -1,11 +1,13 @@
-// june 2
-
-
-
+// june 5
 
 //entity varibles
 float leftx, lefty, leftd, rightx, righty, rightd;  //padal
 float ballx, bally, balld;  //ball
+
+// keyboard variables
+boolean wkey,skey,upkey,downkey;
+
+
 //mode framework
 int mode;
 final int INTRO=1;
@@ -28,7 +30,10 @@ void setup(){
   ballx= width/2;
   bally=height/2;
   balld=100;
-}
+  
+  //initalize keyboard 
+  wkey= skey= upkey= downkey= false;
+} 
 
 void draw() {
   if (mode == INTRO) {
