@@ -21,9 +21,10 @@ void game() {
   circle(ballx,bally,balld);
   
   //ball movements
+  if (timer<0){
   ballx= ballx+ vx;
   bally= bally+vy;
-  
+  }
   d=dist(leftx,lefty,ballx,bally);
   D=dist(rightx,righty,ballx,bally);
   r=leftd/2;
@@ -43,22 +44,29 @@ void game() {
   }
   
   //score
+  
+ 
   textSize(50);
   fill(0);
   text(leftscore,width/4,100);
   fill(0);
   text(rightscore,3*width/4,100);
+  //text(timer,3*width/4,550);
+   timer=timer-1;
   
   if(ballx<0) {
     rightscore++;
     ballx=width/2;
     bally=height/2;
+    timer=100;
   }
-   if(ballx<0) {
+   if(ballx>800) {
     leftscore++;
     ballx=width/2;
     bally=height/2;
+    timer=100;
   }
+  
 }
 
 void gameclicks() {
