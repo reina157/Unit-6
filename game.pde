@@ -14,8 +14,22 @@ void game() {
   //move paddle
   if( wkey== true) lefty=lefty-5;
   if(skey == true) lefty=lefty+5;
+  if(lefty <100 ){
+    lefty=100;
+  }
+  if(lefty>500) {
+    lefty=height-100;
+  }
+  
+  
   if(upkey == true) righty =righty-5;
   if(downkey == true) righty = righty+5;
+  if(righty <100 ){
+    righty=100;
+  }
+  if(righty>500) {
+    righty=height-100;
+  }
   
   //ball
   circle(ballx,bally,balld);
@@ -44,8 +58,9 @@ void game() {
   }
   
   //score
-  
- 
+  textSize(30);
+  text("player1:",150,50);
+  text("player2:",550,50);
   textSize(50);
   fill(0);
   text(leftscore,width/4,100);
@@ -59,13 +74,22 @@ void game() {
     ballx=width/2;
     bally=height/2;
     timer=100;
+    text("player2",400,100);
   }
    if(ballx>800) {
     leftscore++;
     ballx=width/2;
     bally=height/2;
     timer=100;
+   
   }
+  
+  if(leftscore>=3 ){
+    mode=GAMEOVER;
+  }
+ if( rightscore>=3) {
+   mode=GAMEOVER;
+ }
   
 }
 
