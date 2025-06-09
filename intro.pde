@@ -1,5 +1,5 @@
 void intro() {
-  background(183,115,115);
+  background(129,161,196);
   fill(64,80,75);
   rect(100,400,200,100);
   tactile(500,400,200,100);
