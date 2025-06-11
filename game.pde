@@ -1,6 +1,8 @@
 void game() {
   background(58,134,84);
-  
+  theme.play();
+    
+    
   //line
   fill(226,247,67);
   strokeWeight(10);
@@ -90,9 +92,28 @@ void game() {
  if( rightscore>=3) {
    mode=GAMEOVER;
  }
+ 
+ //pause
+  fill(225);
+   tactile(750,50,70);
+  ellipse(750, 50, 70, 70);
+  textSize(20);
+  fill(0);
+  text("Pause", 725, 55);
+ 
   
 }
 
 void gameclicks() {
-  
+ if (dist(mouseX, mouseY, 750, 50)<50) {
+    mode = PAUSE;
+  } 
+}
+
+void tactile(int x, int y, int r) {
+  if (dist(mouseX, mouseY, 750, 50)<50) {
+    stroke(255);
+  } else {
+    stroke(0);
+  }
 }

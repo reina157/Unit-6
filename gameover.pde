@@ -2,6 +2,8 @@ void gameover(){
   background(0);
   fill(225);
   textSize(50);
+  theme.pause();
+  gameover.play();
   if(leftscore>rightscore){
     text("PLAYER 1 WINS!", 250,250);
     
@@ -17,4 +19,5 @@ void gameover(){
     
 void gameoverClicks() {
       mode= INTRO;
+      theme.rewind();
 }
