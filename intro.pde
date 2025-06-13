@@ -1,8 +1,9 @@
 void intro() {
-  background(129,161,196);
+  background(183,115,115);
   fill(64,80,75);
   rect(100,400,200,100);
   tactile(500,400,200,100);
+  AI=true;
   strokeWeight(5);
   fill(0);
   textSize(40);
@@ -11,8 +12,10 @@ void intro() {
   fill(64,80,75);
   rect(500,400,200,100);
   tactile(100,400,200,100);
+  AI=false;
   fill(0);
   text("2 PLAYER",520,460);
+  
 }
 
 void introClicks() {

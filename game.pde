@@ -32,6 +32,17 @@ void game() {
   if(righty>500) {
     righty=height-100;
   }
+  //one player
+  
+  if(AI==false){
+    if(upkey==true) righty=righty-5;
+    if(downkey == true) righty=righty+5;
+  }else{
+    if(ballx>300){
+      if (bally>righty) righty=righty-1;
+      if(bally<righty) righty=righty+1;
+    }
+  }
   
   //ball
   circle(ballx,bally,balld);
@@ -46,18 +57,23 @@ void game() {
   r=leftd/2;
   R= balld/2;
   if(d<=r+R){
+   
     vx=(ballx-leftx)/15;
     vy=(bally-lefty)/15;
-  }
+    bump.play();
+    
+}
+  
   if(D<=r+R){
     vx=(ballx-rightx)/15;
     vy=(bally-righty)/15;
+    bump.play(); 
   }
-  
   
    if (bally<balld/2 || bally >= height-balld/2) {
     vy=vy*-1;
   }
+ 
   
   //score
   textSize(30);
@@ -83,9 +99,10 @@ void game() {
     ballx=width/2;
     bally=height/2;
     timer=100;
-   
   }
   
+ 
+ 
   if(leftscore>=3 ){
     mode=GAMEOVER;
   }
@@ -94,24 +111,27 @@ void game() {
  }
  
  //pause
+ pushStyle();
   fill(225);
-   tactile(750,50,70);
+   tactile(750,50,35);
   ellipse(750, 50, 70, 70);
   textSize(20);
   fill(0);
   text("Pause", 725, 55);
- 
+ popStyle();
   
 }
 
-void gameclicks() {
- if (dist(mouseX, mouseY, 750, 50)<50) {
+
+void gameClicks() {
+  println("gameClicks running");
+ if (dist(mouseX, mouseY, 750, 50)<70) {
     mode = PAUSE;
   } 
 }
 
 void tactile(int x, int y, int r) {
-  if (dist(mouseX, mouseY, 750, 50)<50) {
+  if (dist(mouseX, mouseY, 750, 50)<70) {
     stroke(255);
   } else {
     stroke(0);
