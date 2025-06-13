@@ -57,24 +57,24 @@ void game() {
   r=leftd/2;
   R= balld/2;
   if(d<=r+R){
-   
     vx=(ballx-leftx)/15;
     vy=(bally-lefty)/15;
+    bump.rewind();
     bump.play();
-    
 }
   
   if(D<=r+R){
     vx=(ballx-rightx)/15;
-    vy=(bally-righty)/15;
+    vy=(bally-righty)/15; 
+    bump.rewind();
     bump.play(); 
   }
   
    if (bally<balld/2 || bally >= height-balld/2) {
     vy=vy*-1;
   }
- 
-  
+
+   
   //score
   textSize(30);
   text("player1:",150,50);
