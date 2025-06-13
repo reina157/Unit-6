@@ -32,18 +32,18 @@ void game() {
   if(righty>500) {
     righty=height-100;
   }
+  
   //one player
   
   if(AI==false){
     if(upkey==true) righty=righty-5;
     if(downkey == true) righty=righty+5;
   }else{
-    if(ballx>300){
-      if (bally>righty) righty=righty-1;
-      if(bally<righty) righty=righty+1;
+    if(ballx>400){
+      if(bally>righty) lefty=lefty+1;
+      if(bally<righty) lefty=lefty-1;
     }
   }
-  
   //ball
   circle(ballx,bally,balld);
   

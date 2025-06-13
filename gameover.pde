@@ -3,7 +3,6 @@ void gameover(){
   fill(225);
   textSize(50);
   theme.pause();
-  
   if(leftscore>rightscore){
     text("PLAYER 1 WINS!", 250,250);
     

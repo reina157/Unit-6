@@ -1,11 +1,11 @@
 void mouseReleased(){
   if (mode == INTRO) {
-    intro();
+    introClicks();
   } else if (mode == GAME) {
-    game();
+    gameClicks();
   } else if (mode == PAUSE) {
-    pause();
+    pauseClicks();
   } else if (mode == GAMEOVER){
-    gameover();
+    gameoverClicks();
   }
 }
