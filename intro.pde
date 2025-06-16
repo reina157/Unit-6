@@ -1,4 +1,6 @@
 void intro() {
+  theme.rewind();
+  theme.play();
   background(183,115,115);
   fill(64,80,75);
   rect(100,400,200,100);
@@ -12,17 +14,23 @@ void intro() {
   fill(64,80,75);
   rect(500,400,200,100);
   tactile(100,400,200,100);
-  AI=false;
+  
   fill(0);
   text("2 PLAYER",520,460);
   
 }
 
 void introClicks() {
-  if ( mouseX > 100 && mouseX < 300 && mouseY> 400 && mouseY< 500)
+  if ( mouseX > 100 && mouseX < 300 && mouseY> 400 && mouseY< 500){
    mode = GAME;
-  if ( mouseX > 500 && mouseX< 700 && mouseY> 400 && mouseY< 500)
+   AI=true;
+}
+  if ( mouseX > 500 && mouseX< 700 && mouseY> 400 && mouseY< 500){
    mode = GAME;
+    AI=false;
+  }
+   
+   
 }
 
 void tactile(int x, int y, int w, int h) {

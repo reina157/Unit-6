@@ -39,9 +39,9 @@ void game() {
     if(upkey==true) righty=righty-5;
     if(downkey == true) righty=righty+5;
   }else{
-    if(ballx>400){
-      if(bally>righty) lefty=lefty+1;
-      if(bally<righty) lefty=lefty-1;
+    if(ballx<400){
+      if(bally>righty) lefty=lefty+5;
+      if(bally<righty) lefty=lefty-5;
     }
   }
   //ball
@@ -77,14 +77,13 @@ void game() {
    
   //score
   textSize(30);
-  text("player1:",150,50);
-  text("player2:",550,50);
+  text("Player 1:",150,50);
+  text("Player 2:",550,50);
   textSize(50);
   fill(0);
   text(leftscore,width/4,100);
   fill(0);
   text(rightscore,3*width/4,100);
-  //text(timer,3*width/4,550);
    timer=timer-1;
   
   if(ballx<0) {
@@ -92,7 +91,7 @@ void game() {
     ballx=width/2;
     bally=height/2;
     timer=100;
-    text("player2",400,100);
+   // text("player 2",400,100);
   }
    if(ballx>800) {
     leftscore++;

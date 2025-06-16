@@ -1,5 +1,4 @@
 void gameover(){
-  background(0);
   fill(225);
   textSize(50);
   theme.pause();
@@ -18,5 +17,7 @@ void gameover(){
     
 void gameoverClicks() {
       mode= INTRO;
+      leftscore=0;
+    rightscore=0;
       theme.rewind();
 }
